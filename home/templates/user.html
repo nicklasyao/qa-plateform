@@ -1,0 +1,30 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>username</th>
+            <th>isActive</th>
+            <th>email</th>
+            <th>lastLogIn</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in users %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ u.username }}</td>
+            {% ifequal u.is_active 1 %}
+            <td>True</td>
+            {% else %}
+            <td>False</td>
+            {% endifequal %}
+            <td>{{ u.email }}</td>
+            <td>{{ u.last_login|date:"Y-m-d H:i:s" }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
