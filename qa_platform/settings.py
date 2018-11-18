@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'qa_platform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': '',
+        'NAME': 'py_test',
+        'USER': 'test',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
-        'CHARSET': 'utf8',
-        'COLLATION': 'utf8_general_ci',
+        # 'CHARSET': 'utf8',
+        # 'COLLATION': 'utf8_general_ci',
     },
     'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',

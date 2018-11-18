@@ -6,6 +6,8 @@
         <tr>
             <th>#</th>
             <th>username</th>
+            <th>lastName</th>
+            <th>firstName</th>
             <th>isActive</th>
             <th>email</th>
             <th>lastLogIn</th>
@@ -16,6 +18,8 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ u.username }}</td>
+            <td>{{ u.last_name }}</td>
+            <td>{{ u.first_name }}</td>
             {% ifequal u.is_active 1 %}
             <td>True</td>
             {% else %}
