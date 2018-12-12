@@ -1,0 +1,18 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<!--导航栏样式调整-->
+<span id="page_flag" hidden>数据工厂</span>
+
+{% block form %}
+<div class="btn-group nav-stacked" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><a href="/data/province/">省份查询</a></button>
+    <button type="button" class="btn btn-default"><a href="/data/house/add" target="_blank">登记房源</a></button>
+    <button type="button" class="btn btn-default">Right</button>
+</div>
+{% endblock %}
+<div>
+    {{ msg }}
+</div>
+
+{% endblock %}
