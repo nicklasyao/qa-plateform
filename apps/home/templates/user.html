@@ -1,0 +1,37 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+<!--辅助导航栏样式调整-->
+<span id="page_flag" hidden>用户管理</span>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>登录名</th>
+            <th>姓氏</th>
+            <th>名字</th>
+            <th>状态</th>
+            <th>邮箱</th>
+            <th>最近登录时间</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in users %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.last_name }}</td>
+            <td>{{ u.first_name }}</td>
+            {% ifequal u.is_active 1 %}
+            <td>已激活</td>
+            {% else %}
+            <td>已禁用</td>
+            {% endifequal %}
+            <td>{{ u.email }}</td>
+            <td>{{ u.last_login|date:"Y-m-d H:i:s" }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

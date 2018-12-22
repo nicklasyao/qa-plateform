@@ -1,0 +1,23 @@
+{% extends "base_page.html" %}
+{% block body %}
+<div class="page-header">
+    <h2>还款账户信息
+        <small>新增/更新还款账户身份证/银行卡等信息</small>
+    </h2>
+</div>
+<div class="row">
+    <div class="span6">
+        <form action="/data/payinfo/add" method="post">
+            <div class="form-group">
+                {{ form.as_p }}
+                <button type="submit">提交</button>
+            </div>
+        </form>
+        {{ msg }}
+    </div>
+    <div class="span2">
+        <h3>执行结果：</h3>
+        <span style="color:red">{{ result_data }}</span>
+    </div>
+</div>
+{% endblock %}

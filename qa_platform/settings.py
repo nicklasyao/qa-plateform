@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'home',
     'learning',
     'data_center',
+    # for xadmin
+    #  'xadmin',
+    # 'crispy_forms',
+    'reversion',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'qa_platform.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -93,7 +96,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -112,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -126,7 +127,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -139,3 +139,70 @@ EMAIL_HOST = 'smtp.163.com'
 # EMAIL_PORT = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
+
+# 服务器地址
+FYFQ_URL = 'http://47.107.21.127:9000'
+
+# 文档地址 https://django-suit.readthedocs.io/en/latest/configuration.html
+# Django Suit configuration example
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': '测试效能平台',
+    'HEADER_DATE_FORMAT': 'Y-m-d,l',
+    # 'HEADER_DATE_FORMAT': 'l, j. F Y',
+    # 'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    # 'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    # 'SEARCH_URL': '/admin/auth/user/',
+    'SEARCH_URL': '',   # 空则隐藏搜索框
+    # 'MENU_ICONS': {
+    #    'sites': 'icon-leaf',
+    #    'auth': 'icon-lock',
+    # },
+    # 'MENU_OPEN_FIRST_CHILD': True, # Default True
+    # 'MENU_EXCLUDE': ('auth.group',),
+    'MENU': (
+
+        # Keep original label and models
+        # 'sites',
+        # Rename app and set icon
+        # {'app': 'auth', 'label': 'Authorization', 'icon':'icon-lock'},
+
+        # Reorder app models
+        {'app': 'auth', 'models': (
+            'user',
+            'group',
+            'auth'
+        )},
+
+        # Custom app, with models
+        {'label': '数据工厂', 'icon': 'icon-cog', 'models': (
+            {'label': u'凤盈分期', 'url': '/data/'},
+            {'label': u'共享假期', 'url': '#'}
+        )},
+
+        # Cross-linked models with custom name; Hide default icon
+        # {'label': 'Custom', 'icon':None, 'models': (
+        #     'auth.group',
+        #
+        # )},
+
+        # Custom app, no models (child links)
+        # {'label': 'Users', 'url': 'auth.user', 'icon':'icon-user'},
+
+        # Separator
+        # '-',
+
+        # Custom app and model with permissions
+        # {'label': 'Secure', 'permissions': 'auth.add_user', 'models': [
+        #     {'label': 'custom-child', 'permissions': ('auth.add_user', 'auth.add_group')}
+        # ]},
+    )
+
+    # misc
+    # 'LIST_PER_PAGE': 15
+}

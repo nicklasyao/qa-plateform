@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include, url
 from django.urls import path
+# import xadmin
+# xadmin.autodiscover()
+
+# version模块自动注册需要版本控制的 Model
+# from xadmin.plugins import xversion
+# xversion.register_models()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('learning/', include('learning.urls')),
     path('data/', include('data_center.urls')),
+    # path('demo/', xadmin.site.urls),
 ]

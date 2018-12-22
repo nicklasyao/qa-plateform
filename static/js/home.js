@@ -13,3 +13,18 @@ function resetClass(){
         $(selector).parent().addClass('active')
     }
 }
+
+function setIfSource(param){
+    href = $(param).attr('url')
+    $('#holder').attr('src', href)
+}
+
+// 窗口高度初始化
+window.onload = function init(){
+    win_height = $('body').innerHeight() * 0.65 + 'px'
+    //iframe
+    $('#holder').css('min-height', win_height)
+    //左侧导航栏
+//    $('#left-nav').css('min-height', win_height)
+//    $('#left-nav').css('background-color', '#edeff1')
+}
