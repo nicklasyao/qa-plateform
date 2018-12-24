@@ -7,7 +7,7 @@
 2. qa_platform/settings.py中修改数据库配置
     DATABASES = {}
 3. 同步表结构，项目根目录顺序执行以下命令：
-    python manage.py makemigrations
+    python manage.py makemigrations /
     python manage.py migrate
 4. 启动服务：python manage.py runserver
 5. 浏览器访问：http://127.0.0.1:8000/
