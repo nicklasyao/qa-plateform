@@ -184,6 +184,7 @@ SUIT_CONFIG = {
             {'label': u'凤盈分期', 'url': '/data/'},
             {'label': u'共享假期', 'url': '#'}
         )},
+        {'label': u'知识库', 'icon': 'icon-book', 'url': '/learning/'},
 
         # Cross-linked models with custom name; Hide default icon
         # {'label': 'Custom', 'icon':None, 'models': (
