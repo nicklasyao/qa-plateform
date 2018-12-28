@@ -1,0 +1,31 @@
+{% extends "base_site.html" %}
+{% block title%}数据工厂{% endblock%}
+{% block content %}
+<div class="btn-group">
+    <button class="btn ">进件管理</button>
+    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#" url="/data/house/add" onclick="setIfSource(this)">1.登记房源信息</></li>
+        <li><a href="#" url="/data/pointsale/add" onclick="setIfSource(this)">2.销售顾问信息</a></li>
+        <li><a href="#" url="/data/payinfo/add" onclick="setIfSource(this)">3.还款账户信息</a></li>
+        <li><a href="#" url="/data/customer/add" onclick="setIfSource(this)">4.添加客户信息</a></li>
+        <li><a href="#" url="/data/approve/add" onclick="setIfSource(this)">5.提交自动审批</a></li>
+    </ul>
+</div>
+<div class="btn-group">
+    <button class="btn ">授信审批</button>
+    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#" url="/data/house/add" onclick="setIfSource(this)">1.登记房源信息</></li>
+        <li><a href="#" url="/data/pointsale/add" onclick="setIfSource(this)">2.销售顾问信息</a></li>
+        <li><a href="#" url="/data/payinfo/add" onclick="setIfSource(this)">3.还款账户信息</a></li>
+        <li><a href="#" url="/data/customer/add" onclick="setIfSource(this)">4.添加客户信息</a></li>
+        <li><a href="#" url="/data/approve/add" onclick="setIfSource(this)">5.提交自动审批</a></li>
+    </ul>
+</div>
+<hr>
+<iframe id="holder" src="/data/house/add" style="width:100%; border:0px;" onload="init()"></iframe>
+{% block form %}
+{% endblock %}
+
+{% endblock %}
