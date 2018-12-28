@@ -6,7 +6,7 @@
 1. 安装node.js, webpack, npm等
 2. 执行build.bat文件
 
-#启动项目
+#启动后端服务
 1. 安装python和django
 2. qa_platform/settings.py中修改数据库配置
     DATABASES = {}
