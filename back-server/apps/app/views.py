@@ -1,9 +1,12 @@
 import json
+import logging
 
 from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
+
+logger = logging.getLogger('log')
 
 
 # Create your views here.
@@ -26,6 +29,7 @@ def logging_in(request):
             data = {'name': user.username}
             return JsonResponse(_get_response_json_dic(data))
         else:
+            logger.warning('{}登录校验失败，用户名密码不匹配'.format(user_name))
             return JsonResponse(_get_response_json_dic('', -1, u'用户名或密码错误'))
     # get
     return JsonResponse(_get_response_json_dic('', -1, u'无效请求'))
