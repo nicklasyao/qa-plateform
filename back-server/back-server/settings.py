@@ -181,6 +181,7 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 5,  # 文件大小
             'backupCount': 5,  # 备份数
             'formatter': 'standard',  # 输出格式
+            'encoding': 'utf-8',  # 设置默认编码
         },
         # 输出info日志
         'info': {
@@ -190,12 +191,13 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
+            'encoding': 'utf-8',  # 设置默认编码
         },
         # 控制台输出
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'standard'
+            'formatter': 'standard',
         },
     },
     # 配置用哪几种 handlers 来处理日志

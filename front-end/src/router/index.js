@@ -8,7 +8,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/dashboard'
+            redirect: '/quality'
         },
         {
             path: '/',
@@ -16,8 +16,8 @@ export default new Router({
             meta: { title: '自述文件' },
             children:[
                 {
-                    path: '/dashboard',
-                    component: resolve => require(['../components/page/Dashboard.vue'], resolve),
+                    path: '/quality',
+                    component: resolve => require(['../components/page/QualityDashboard.vue'], resolve),
                     meta: { title: '系统首页' }
                 },
                 {

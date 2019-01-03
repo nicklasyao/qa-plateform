@@ -26,7 +26,7 @@ def logging_in(request):
 
         if user is not None:
             auth.login(request, user)
-            data = {'name': user.username}
+            data = {'name': user.username, 'last_login': user.last_login}
             return JsonResponse(_get_response_json_dic(data))
         else:
             logger.warning('{}登录校验失败，用户名密码不匹配'.format(user_name))

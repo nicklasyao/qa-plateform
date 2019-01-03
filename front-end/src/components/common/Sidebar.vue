@@ -40,8 +40,8 @@
                 items: [
                     {
                         icon: 'el-icon-lx-home',
-                        index: '/dashboard',
-                        title: '系统首页'
+                        index: '/quality',
+                        title: '质量看板'
                     },
                     // {
                     //     icon: 'el-icon-lx-cascades',
@@ -121,24 +121,24 @@
                                 index: '',
                                 title: '中台数据',
                                 subs: [
-                                    {
-                                        index: '/data/project',
-                                        title: '项目管理'
-                                    },
+                                    // {
+                                    //     index: '/data/project',
+                                    //     title: '项目管理'
+                                    // },
                                     {
                                         index: '/data/apply',
                                         title: '进件管理',
                                     },
-                                    {
-                                        index: '/data/audit',
-                                        title: '进件审批',
-                                    }
+                                    // {
+                                    //     index: '/data/audit',
+                                    //     title: '进件审批',
+                                    // }
                                 ]
                             },
-                            {
-                                index: '/other',
-                                title: '其他数据'
-                            }
+                            // {
+                            //     index: '/other',
+                            //     title: '其他数据'
+                            // }
                         ]
                     },
                     {

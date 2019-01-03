@@ -55,6 +55,7 @@
                             if (res.data.code == '0') {
                                 // localStorage.setItem('ms_username', this.ruleForm.username);
                                 this.$MyComm.setCookie('ms_username', this.ruleForm.username, 0.5)
+                                this.$MyComm.setCookie('last_login_time', res.data.last_login)
                                 this.$router.push('/');
                             } else {
                                 this.msg = res.data.message;
