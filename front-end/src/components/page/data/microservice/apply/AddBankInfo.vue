@@ -9,7 +9,7 @@
                                 <el-input v-model="form.serialNo" disabled></el-input>
                             </el-form-item>
                             <el-form-item label="操作人">
-                                <el-input v-model="form.editUserId"></el-input>
+                                <el-input v-model="form.editUserId" disabled></el-input>
                             </el-form-item>
                             <el-form-item label="银行卡户名">
                                 <el-input v-model="form.accountName"></el-input>
@@ -23,20 +23,20 @@
                             <el-form-item label="银行卡预留手机号">
                                 <el-input v-model="form.accountMobile"></el-input>
                             </el-form-item>
-                            <el-form-item label="开户行">
-                                <el-input v-model="form.repaymentBankNo"></el-input>
+                            <el-form-item label="开户行" >
+                                <el-input v-model="form.repaymentBankNo" disabled></el-input>
                             </el-form-item>
-                            <el-form-item label="开户行所在省份">
-                                <el-input v-model="form.branchBankProvince"></el-input>
+                            <el-form-item label="开户行所在省份" >
+                                <el-input v-model="form.branchBankProvince" disabled></el-input>
                             </el-form-item>
-                            <el-form-item label="开户行所在城市">
-                                <el-input v-model="form.branchBankCity"></el-input>
+                            <el-form-item label="开户行所在城市" >
+                                <el-input v-model="form.branchBankCity" disabled></el-input>
                             </el-form-item>
                             <el-form-item label="开户行分行">
-                                <el-input v-model="form.repaymentSubBankNo"></el-input>
+                                <el-input v-model="form.repaymentSubBankNo" disabled></el-input>
                             </el-form-item>
                             <el-form-item label="开户行支行">
-                                <el-input v-model="form.bankBranch"></el-input>
+                                <el-input v-model="form.bankBranch" disabled></el-input>
                             </el-form-item>
                             <el-form-item>
                                 <el-button type="primary" @click="insert">提交</el-button>

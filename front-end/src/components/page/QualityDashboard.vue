@@ -10,6 +10,7 @@
                             <!--<div>{{role}}</div>-->
                         </div>
                     </div>
+                    <div><p>客官稍候，内容还在路上...</p></div>
                     <!--<div class="user-info-list">上次登录时间：<span>{{lastLoginTime}}</span></div>-->
                     <!--<div class="user-info-list">上次登录地点：<span>东莞</span></div>-->
                 </el-card>
